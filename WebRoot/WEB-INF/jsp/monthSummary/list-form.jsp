@@ -17,24 +17,3 @@
 									   />
 				</label>
 				</section>
-					<section class="col col-2">
-						<label class="input"> 
-								<form:input path="income"
-									id="monthSummary.income" type="text"
-									cssClass="textInputnumber" size="12" placeholder="${nfn:i18nMessage(reqCtx,'props.com.huqiao.smartadmin.aimme.entity.MonthSummary.income')}"/>
-				</label>
-				</section>
-					<section class="col col-2">
-						<label class="input"> 
-								<form:input path="balance"
-									id="monthSummary.balance" type="text"
-									cssClass="textInputnumber" size="12" placeholder="${nfn:i18nMessage(reqCtx,'props.com.huqiao.smartadmin.aimme.entity.MonthSummary.balance')}"/>
-				</label>
-				</section>
-					<section class="col col-2">
-						<label class="input"> 
-								<form:input path="outcome"
-									id="monthSummary.outcome" type="text"
-									cssClass="textInputnumber" size="12" placeholder="${nfn:i18nMessage(reqCtx,'props.com.huqiao.smartadmin.aimme.entity.MonthSummary.outcome')}"/>
-				</label>
-				</section>

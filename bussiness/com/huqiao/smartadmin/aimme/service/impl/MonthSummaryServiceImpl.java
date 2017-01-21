@@ -24,16 +24,16 @@ public class MonthSummaryServiceImpl extends BaseServiceImpl<MonthSummary> imple
     @Override
     public Page<MonthSummary> getListPage(MonthSummary monthSummary,Page pageInfo) {
       	pageInfo.setTotalCount(monthSummaryDao.findListRowCount(monthSummary).intValue());
-		pageInfo.setOrderField(pageInfo.getOrderField() == null ? "id": pageInfo.getOrderField());
-		pageInfo.setOrderDirection(pageInfo.getOrderDirection() == null ? "asc": pageInfo.getOrderDirection());
+		pageInfo.setOrderField(pageInfo.getOrderField() == null ? "createTime": pageInfo.getOrderField());
+		pageInfo.setOrderDirection(pageInfo.getOrderDirection() == null ? "desc": pageInfo.getOrderDirection());
 		pageInfo.setList(monthSummaryDao.findListPage(monthSummary,pageInfo));
         return pageInfo;
     }
 	@Override
 	public Page<HistoryRecord<MonthSummary>> getHistoryListPage(MonthSummary monthSummary, Page pageInfo) {
 		pageInfo.setTotalCount(monthSummaryDao.findHistoryListRowCount(monthSummary,pageInfo).intValue());
-		pageInfo.setOrderField(pageInfo.getOrderField() == null ? "id": pageInfo.getOrderField());
-		pageInfo.setOrderDirection(pageInfo.getOrderDirection() == null ? "asc": pageInfo.getOrderDirection());
+		pageInfo.setOrderField(pageInfo.getOrderField() == null ? "createTime": pageInfo.getOrderField());
+		pageInfo.setOrderDirection(pageInfo.getOrderDirection() == null ? "desc": pageInfo.getOrderDirection());
 		pageInfo.setList(monthSummaryDao.findHistoryListPage(monthSummary,pageInfo));
         return pageInfo;
 	}

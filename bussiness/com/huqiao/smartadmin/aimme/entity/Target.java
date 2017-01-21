@@ -311,7 +311,7 @@ public void setKey(String key){
 /**
  * @return String 关联值 
  */
-@Column(name="key",length=255,nullable=true)
+@Column(name="_key",length=255,nullable=true)
 public String getKey(){
 		return this.key;	
 }
