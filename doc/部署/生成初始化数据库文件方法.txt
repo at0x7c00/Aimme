@@ -1,0 +1,20 @@
+1、分别执行下列语句
+Select CONCAT( 'truncate table ', table_name, ';' ) 
+FROM information_schema.tables 
+Where TABLE_SCHEMA='catfish' 
+and table_name not in ('sys_common_folder','sys_config','sys_function_point','sys_role','sys_role_function_point','ci_con_ci_type','dep_con_installtype','dep_con_maintaintype','dep_con_osplat');
+
+Select CONCAT( 'drop table ', table_name, ';' ) 
+FROM information_schema.tables 
+Where TABLE_SCHEMA='catfish' 
+and table_name like '%_aud%' and table_name NOT IN('aud_audit_log');
+
+2、拷贝两次的执行结果，并在最上方加下如下语句
+set foreign_key_checks=0;
+
+3、在最下方加下如下语句
+#默认用户 admin 密码是 a
+INSERT INTO `sys_user` VALUES ('admin', 'admin', 'admin@localhost.com', '0cc175b9c0f1b6a831c399e269772661', '133026500000', 'Active', null);
+INSERT INTO `sys_user_role` VALUES ('admin', '1');
+
+4、执行步骤2结果

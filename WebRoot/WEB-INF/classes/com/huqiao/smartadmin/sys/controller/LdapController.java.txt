@@ -1,0 +1,124 @@
+package com.huqiao.smartadmin.sys.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.naming.ldap.LdapContext;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.huqiao.smartadmin.common.controller.BaseController;
+import com.huqiao.smartadmin.ldap.EncodeUtil;
+import com.huqiao.smartadmin.ldap.LdapAttributeEnum;
+import com.huqiao.smartadmin.ldap.LdapConnection;
+import com.huqiao.smartadmin.ldap.entity.config.BaseObject;
+import com.huqiao.smartadmin.ldap.entity.config.Config;
+import com.huqiao.smartadmin.sys.service.IConfigService;
+import com.huqiao.smartadmin.sys.service.IRoleService;
+import com.huqiao.smartadmin.sys.service.IUserService;
+import com.huqiao.smartadmin.util.web.JsonResult;
+
+/**
+ * Ldap管理
+ * @author hq
+ */
+@Controller
+@RequestMapping("/ldap/manage.do")
+public class LdapController extends BaseController{
+	
+	@Resource
+	private IUserService userService;
+	@Resource
+	private IConfigService configService;
+	@Resource
+	private IRoleService roleService;
+	
+	@ModelAttribute
+	public Config initConfig(){
+		return Config.getInstance(true);
+	}
+
+	@RequestMapping(params="method=manageUI")
+	public void manage(HttpServletRequest request){
+		Config config = Config.getInstance(true);
+		//List<Company> companies = companyService.getByProperties(Company.class, new String[]{"status"}, new Object[]{YesNo.Yes}, "sort", null);
+/*		if (StringUtil.isNum(config.getCompany())) {
+			Company company=companyService.getById(Company.class,  Integer.parseInt(config.getCompany()));
+			if (company==null && companies.size()>0) {
+				company = companies.get(1);
+				config.setCompany(1+"");
+			}else if(company==null && companies.size()==0){
+				config.setCompany(0+"");
+			}
+		}else {
+			if (companies.size()>0) {
+				config.setCompany(1+"");
+			}else if(companies.size()==0){
+				config.setCompany(0+"");
+			}
+		}*/
+		request.setAttribute("config",config);
+		request.setAttribute("ldapAttributeMap", LdapAttributeEnum.ldapAttributeMap);
+		//request.setAttribute("companies", companies);
+		
+	}
+	
+	@RequestMapping(params="method=connTest")
+	@ResponseBody
+	public String connectionTest(@RequestParam("url")String url,@RequestParam("dn") String dn,HttpServletRequest request){
+		String password = request.getParameter("password");
+		if(password==null || password.trim().equals("")){
+			return "no pwd";
+		}
+		LdapConnection ldapConnection = new LdapConnection(url,dn,password);
+		LdapContext ldapContext = ldapConnection.getLdapContext();
+		if(ldapContext==null){
+			return "error";
+		}else{
+			return "ok";
+		}
+	}
+	
+	@RequestMapping(params="method=update")
+	@ResponseBody
+	public JsonResult update(@RequestParam("rel") String rel,@RequestParam(value="ous",required=false)String[] ous,@RequestParam(value="newPassword",required=false) String newPassword,@ModelAttribute Config config,HttpServletRequest request){
+		if(newPassword!=null && !newPassword.trim().equals("")){
+			config.getConnection().setPassword(EncodeUtil.decode(newPassword, 10));
+		}
+		List<BaseObject> baseObjectList = new ArrayList<BaseObject>();
+		BaseObject baseObject = null;
+		int i = 0;
+		if(ous!=null){
+			for(String ou: ous){
+				if(ou == null || ou.trim().equals("")){
+					continue;
+				}
+				baseObject = new BaseObject();
+				baseObject.setOu(ou);
+				baseObject.setCompanyId(request.getParameter("companyIds"+i));
+				baseObject.setCompanyName(request.getParameter("companyNames"+i));
+				baseObjectList.add(baseObject);
+				i++;
+			}
+		}
+		config.getSearch().setBaseObjects(baseObjectList);
+		
+		config.saveToXml();
+		
+		//LdapSyncThreadManager.getInstance(userService,configService,roleService,companyService).shutDownLdapThread();
+		//if(config.isUseLdap()){
+			//LdapSyncThreadManager.getInstance(userService,configService,roleService,companyService).startLdapThread();
+		//}
+		JsonResult jsonResult = new JsonResult();
+		jsonResult.setNavTabId(rel);
+		jsonResult.setCallbackType("");
+		jsonResult.setMessage("修改成功");
+		return jsonResult;
+	}
+}

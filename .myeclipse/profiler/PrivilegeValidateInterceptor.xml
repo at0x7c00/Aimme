@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="app_preset_prof_preset_name">PrivilegeValidateInterceptor Launch Configuration</entry>
+<entry key="profiler.settings.sampling.interval">10</entry>
+<entry key="app_preset_prof_preset_filter_s"/>
+<entry key="app_preset_prof_preset_filter_p">com.huqiao.smartadmin.asset.configuration.controller.*,&#13;
+com.huqiao.smartadmin.asset.configuration.dao.*,&#13;
+com.huqiao.smartadmin.asset.configuration.entity.*,&#13;
+com.huqiao.smartadmin.asset.configuration.service.*,&#13;
+com.huqiao.smartadmin.asset.manage.ci.controller.*,&#13;
+com.huqiao.smartadmin.asset.manage.ci.dao.*,&#13;
+com.huqiao.smartadmin.asset.manage.ci.entity.*,&#13;
+com.huqiao.smartadmin.asset.manage.ci.service.*,&#13;
+com.huqiao.smartadmin.asset.manage.datacenterdevice.controller.*,&#13;
+com.huqiao.smartadmin.asset.manage.datacenterdevice.dao.*,&#13;
+com.huqiao.smartadmin.asset.manage.datacenterdevice.entity.*,&#13;
+com.huqiao.smartadmin.asset.manage.datacenterdevice.service.*,&#13;
+com.huqiao.smartadmin.asset.manage.functionci.controller.*,&#13;
+com.huqiao.smartadmin.asset.manage.functionci.dao.*,&#13;
+com.huqiao.smartadmin.asset.manage.functionci.entity.*,&#13;
+com.huqiao.smartadmin.asset.manage.functionci.service.*,&#13;
+com.huqiao.smartadmin.asset.manage.material.controller.*,&#13;
+com.huqiao.smartadmin.asset.manage.material.dao.*,&#13;
+com.huqiao.smartadmin.asset.manage.material.entity.*,&#13;
+com.huqiao.smartadmin.asset.manage.material.service.*,&#13;
+com.huqiao.smartadmin.asset.manage.networkdevice.controller.*,&#13;
+com.huqiao.smartadmin.asset.manage.networkdevice.dao.*,&#13;
+com.huqiao.smartadmin.asset.manage.networkdevice.entity.*,&#13;
+com.huqiao.smartadmin.asset.manage.networkdevice.service.*,&#13;
+com.huqiao.smartadmin.asset.manage.physicaldevice.controller.*,&#13;
+com.huqiao.smartadmin.asset.manage.physicaldevice.dao.*,&#13;
+com.huqiao.smartadmin.asset.manage.physicaldevice.entity.*,&#13;
+com.huqiao.smartadmin.asset.manage.physicaldevice.service.*,&#13;
+com.huqiao.smartadmin.asset.manage.software.controller.*,&#13;
+com.huqiao.smartadmin.asset.manage.software.dao.*,&#13;
+com.huqiao.smartadmin.asset.manage.software.entity.*,&#13;
+com.huqiao.smartadmin.asset.manage.software.service.*,&#13;
+com.huqiao.smartadmin.common.controller.*,&#13;
+com.huqiao.smartadmin.common.dao.*,&#13;
+com.huqiao.smartadmin.common.entity.*,&#13;
+com.huqiao.smartadmin.common.service.*,&#13;
+com.huqiao.smartadmin.deployment.manage.controller.*,&#13;
+com.huqiao.smartadmin.deployment.manage.dao.*,&#13;
+com.huqiao.smartadmin.deployment.manage.entity.*,&#13;
+com.huqiao.smartadmin.deployment.manage.service.*,&#13;
+com.huqiao.smartadmin.history.entity.*,&#13;
+com.huqiao.smartadmin.i18n.*,&#13;
+com.huqiao.smartadmin.interceptor.*,&#13;
+com.huqiao.smartadmin.listener.*,&#13;
+com.huqiao.smartadmin.servlet.*,&#13;
+com.huqiao.smartadmin.sys.controller.*,&#13;
+com.huqiao.smartadmin.sys.dao.*,&#13;
+com.huqiao.smartadmin.sys.entity.*,&#13;
+com.huqiao.smartadmin.sys.service.*,&#13;
+com.huqiao.smartadmin.tag.fns.*,&#13;
+com.huqiao.smartadmin.taglib.*,&#13;
+com.huqiao.smartadmin.ticket.configuration.controller.*,&#13;
+com.huqiao.smartadmin.ticket.configuration.dao.*,&#13;
+com.huqiao.smartadmin.ticket.configuration.entity.*,&#13;
+com.huqiao.smartadmin.ticket.configuration.service.*,&#13;
+com.huqiao.smartadmin.ticket.manage.controller.*,&#13;
+com.huqiao.smartadmin.ticket.manage.dao.*,&#13;
+com.huqiao.smartadmin.ticket.manage.entity.*,&#13;
+com.huqiao.smartadmin.ticket.manage.service.*,&#13;
+com.huqiao.smartadmin.util.*,&#13;
+com.novots.itsm.util.threadlocal.*</entry>
+<entry key="profiler.settings.n.profiled.threads.limit">32</entry>
+<entry key="app_preset_prof_preset_alloc_p">10</entry>
+<entry key="profiler.settings.instrument.method.invoke">true</entry>
+<entry key="app_preset_"/>
+<entry key="profiler.settings.obj.alloc.stack.sampling.depth">0</entry>
+<entry key="app_preset_prof_preset_samplingRefreshRate_s">1000</entry>
+<entry key="app_preset_prof_preset_stacks_p">false</entry>
+<entry key="app_preset_prof_preset_roots_p">com.huqiao.smartadmin.asset.configuration.controller.**
+com.huqiao.smartadmin.asset.configuration.dao.**
+com.huqiao.smartadmin.asset.configuration.entity.**
+com.huqiao.smartadmin.asset.configuration.service.**
+com.huqiao.smartadmin.asset.manage.ci.controller.**
+com.huqiao.smartadmin.asset.manage.ci.dao.**
+com.huqiao.smartadmin.asset.manage.ci.entity.**
+com.huqiao.smartadmin.asset.manage.ci.service.**
+com.huqiao.smartadmin.asset.manage.datacenterdevice.controller.**
+com.huqiao.smartadmin.asset.manage.datacenterdevice.dao.**
+com.huqiao.smartadmin.asset.manage.datacenterdevice.entity.**
+com.huqiao.smartadmin.asset.manage.datacenterdevice.service.**
+com.huqiao.smartadmin.asset.manage.functionci.controller.**
+com.huqiao.smartadmin.asset.manage.functionci.dao.**
+com.huqiao.smartadmin.asset.manage.functionci.entity.**
+com.huqiao.smartadmin.asset.manage.functionci.service.**
+com.huqiao.smartadmin.asset.manage.material.controller.**
+com.huqiao.smartadmin.asset.manage.material.dao.**
+com.huqiao.smartadmin.asset.manage.material.entity.**
+com.huqiao.smartadmin.asset.manage.material.service.**
+com.huqiao.smartadmin.asset.manage.networkdevice.controller.**
+com.huqiao.smartadmin.asset.manage.networkdevice.dao.**
+com.huqiao.smartadmin.asset.manage.networkdevice.entity.**
+com.huqiao.smartadmin.asset.manage.networkdevice.service.**
+com.huqiao.smartadmin.asset.manage.physicaldevice.controller.**
+com.huqiao.smartadmin.asset.manage.physicaldevice.dao.**
+com.huqiao.smartadmin.asset.manage.physicaldevice.entity.**
+com.huqiao.smartadmin.asset.manage.physicaldevice.service.**
+com.huqiao.smartadmin.asset.manage.software.controller.**
+com.huqiao.smartadmin.asset.manage.software.dao.**
+com.huqiao.smartadmin.asset.manage.software.entity.**
+com.huqiao.smartadmin.asset.manage.software.service.**
+com.huqiao.smartadmin.common.controller.**
+com.huqiao.smartadmin.common.dao.**
+com.huqiao.smartadmin.common.entity.**
+com.huqiao.smartadmin.common.service.**
+com.huqiao.smartadmin.deployment.manage.controller.**
+com.huqiao.smartadmin.deployment.manage.dao.**
+com.huqiao.smartadmin.deployment.manage.entity.**
+com.huqiao.smartadmin.deployment.manage.service.**
+com.huqiao.smartadmin.history.entity.**
+com.huqiao.smartadmin.i18n.**
+com.huqiao.smartadmin.interceptor.**
+com.huqiao.smartadmin.listener.**
+com.huqiao.smartadmin.servlet.**
+com.huqiao.smartadmin.sys.controller.**
+com.huqiao.smartadmin.sys.dao.**
+com.huqiao.smartadmin.sys.entity.**
+com.huqiao.smartadmin.sys.service.**
+com.huqiao.smartadmin.tag.fns.**
+com.huqiao.smartadmin.taglib.**
+com.huqiao.smartadmin.ticket.configuration.controller.**
+com.huqiao.smartadmin.ticket.configuration.dao.**
+com.huqiao.smartadmin.ticket.configuration.entity.**
+com.huqiao.smartadmin.ticket.configuration.service.**
+com.huqiao.smartadmin.ticket.manage.controller.**
+com.huqiao.smartadmin.ticket.manage.dao.**
+com.huqiao.smartadmin.ticket.manage.entity.**
+com.huqiao.smartadmin.ticket.manage.service.**
+com.huqiao.smartadmin.util.**
+com.novots.itsm.util.threadlocal.**
+</entry>
+<entry key="profiler.settings.instrument.empty.methods">false</entry>
+<entry key="myeclipse.profiling.mode">0</entry>
+<entry key="profiler.settings.istrument.getter.setter.methods">false</entry>
+<entry key="app_preset_prof_preset_samplingRate_s">100</entry>
+<entry key="profiler.settings.instr.scheme">1</entry>
+<entry key="profiler.settings.cpu.profiling.type">0</entry>
+<entry key="app_preset_prof_preset_selector"/>
+<entry key="app_preset_prof_preset_filterMode_s">true</entry>
+<entry key="app_preset_prof_preset_runnables_p">true</entry>
+<entry key="app_preset_prof_preset_refreshRate_s">1000</entry>
+<entry key="app_preset_prof_preset_filterMode_p">false</entry>
+<entry key="app_preset_prof_preset_memoryMode_p">true</entry>
+</properties>
